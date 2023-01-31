@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Prakashalay</string>
+    <string name="expand">Expand</string>
+    <string name="battery">Battery</string>
+    <string name="oops">Oops!</string>
+    <string name="error">Error</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="whatdoyouremember">What do you remember?</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="submit">Submit</string>
+    <string name="alsoon">Also on:</string>
+    <string name="FacebookLink">https://www.facebook.com/profile.php?id=100089266797691</string>
+    <string name="InstagramLink">https://instagram.com/theprakashalaya?igshid=OGQ2MjdiOTE=</string>
+    <string name="YoutubeLink">https://youtube.com/@theprakashalaya</string>
+    <string name="WhatsappLink">https://wa.me/8340684210</string>
+    <string name="TwitterLink"><![CDATA[https://twitter.com/theprakashalaya?t=a2VdLHPdUoQigcxhFR3l9Q&s=09]]></string>
+    <string name="Feedback">Feedback</string>
+    <string name="HouseMap">House Map</string>
+    <string name="DView">3D View</string>
+    <string name="Aboutus">About us</string>
+    <string name="Setting">Setting</string>
+    <string name="Logout">Logout</string>
+    <string name="ViewerLink">https://autode.sk/3XYjWoy</string>
+    <string name="theprakashalaya">The Prakashalaya</string>
+    <string name="logo">Logo</string>
+    <string name="collapse">Collapse</string>
+    <string name="heythere">Hey there!</string>
+    <string name="alerts">Alerts</string>
+    <string name="open">Open</string>
+    <string name="solarpanel">Solar Panel</string>
+    <string name="goodmorning">Good Morning</string>
+    <string name="wadewilson">Wade Wilson</string>
+    <string name="snapshots">Snapshots</string>
+</resources>
