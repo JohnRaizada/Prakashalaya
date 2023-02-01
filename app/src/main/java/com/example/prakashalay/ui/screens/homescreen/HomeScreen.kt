@@ -1,10 +1,9 @@
 package com.example.prakashalay.ui.screens.homescreen
 import android.os.Build
 import androidx.annotation.RequiresApi
+import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -19,8 +18,11 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
@@ -28,14 +30,15 @@ import com.example.prakashalay.R
 import com.example.prakashalay.data.models.api.account.login.SendLogin
 import com.example.prakashalay.data.repository.DataRepository
 import com.example.prakashalay.ui.layout.buttons.MenuIcon
-import com.example.prakashalay.ui.layout.buttons.UserIconButton
 import com.example.prakashalay.ui.layout.drawers.BottomNavigationDrawer
 import com.example.prakashalay.ui.layout.drawers.SideNavigationDrawer
 import com.example.prakashalay.ui.screens.loginscreen.LoginViewModel
 import com.example.prakashalay.ui.theme.elevation
+import com.example.prakashalay.ui.theme.fontSize
 import com.example.prakashalay.ui.theme.shape
 import com.example.prakashalay.ui.theme.spacing
 import com.google.accompanist.pager.*
+import org.w3c.dom.Text
 
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
 @OptIn(ExperimentalMaterial3Api::class)
@@ -93,6 +96,26 @@ fun HomeScreen(
     }
 }
 }
+//
+//@Composable
+//private fun TextDesign(
+//    modifier: Modifier = Modifier,
+//    @StringRes textRes: Int = R.string.theprakashalaya,
+//    fontSize: TextUnit = MaterialTheme.fontSize.h1
+//){
+//    Text(
+//        text = stringResource(),
+//        modifier = Modifier
+//            .padding(
+//                MaterialTheme.spacing.medium,
+//                MaterialTheme.spacing.damnLarge,
+//                MaterialTheme.spacing.default,
+//                MaterialTheme.spacing.medium
+//            ),
+//        fontFamily = FontFamily.SansSerif
+//    )
+//}
+
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
 @Composable
 private fun BackgroundBox(
@@ -103,8 +126,39 @@ private fun BackgroundBox(
             .fillMaxSize()
     ){
         Column {
-            Text(text = stringResource(R.string.goodmorning))
-            Text(text = stringResource(R.string.wadewilson))
+            Text(text = stringResource(R.string.goodmorning),
+                modifier = Modifier
+                    .padding(
+                        MaterialTheme.spacing.medium,
+                        MaterialTheme.spacing.large,
+                        MaterialTheme.spacing.default,
+                        MaterialTheme.spacing.default
+                    ),
+                fontSize = MaterialTheme.fontSize.subtitle1
+            )
+
+            Text(
+                text = stringResource(R.string.wadewilson),
+                modifier = Modifier
+                    .padding(
+                        MaterialTheme.spacing.small,
+                        MaterialTheme.spacing.small,
+                        MaterialTheme.spacing.default,
+                        MaterialTheme.spacing.default
+                    ),
+                fontSize = MaterialTheme.fontSize.h4
+            )
+            Text(
+                text = stringResource(R.string.alerts),
+                modifier = Modifier
+                    .padding(
+                        MaterialTheme.spacing.medium,
+                        MaterialTheme.spacing.damnLarge,
+                        MaterialTheme.spacing.default,
+                        MaterialTheme.spacing.medium
+                    ),
+                fontSize = MaterialTheme.fontSize.subtitle1
+            )
             TopBox(modifier = Modifier)
             Text(text = stringResource(R.string.snapshots))
             RecommendedBoxPane(
@@ -154,7 +208,7 @@ private fun RecommendedBoxPane(
 @Composable
 private fun SnapshotBox(
     modifier: Modifier = Modifier,
-    imageRes: Int = R.drawable.ic_launcher_background,
+    imageRes: Int = R.drawable._5_,
     stringRes: Int = R.string.app_name,
     color: Color = MaterialTheme.colorScheme.primaryContainer,
     iconRes: Int = R.drawable.ic_launcher_background,
@@ -162,11 +216,11 @@ private fun SnapshotBox(
 ){
     Card(
         modifier = modifier
-            .padding(20.dp, 0.dp, 20.dp, 27.dp)
-            .defaultMinSize(321.dp, 108.dp)
+            .padding(8.dp, 12.dp, 8.dp, 101.dp)
+            .defaultMinSize(344.dp, 160.dp)
             .fillMaxWidth(),
         colors = CardDefaults.cardColors(color),
-        shape = RoundedCornerShape(10.dp)
+        shape = RoundedCornerShape(20.dp)
     ) {
         val expanded = rememberSaveable {
             mutableStateOf(false)
@@ -316,7 +370,7 @@ fun TopBox(
             horizontalAlignment = Alignment.Start
         ) {
             TwoItemBox(modifier = Modifier)
-            MultiItemBox(modifier = Modifier)
+            AlertsSecondBox(modifier = Modifier)
         }
     }
 }
@@ -326,9 +380,9 @@ fun TwoItemBox(
 ){
     Card(
         modifier = modifier
-            .defaultMinSize(200.dp, 180.dp)
-            .requiredSize(200.dp, 180.dp)
-            .padding(MaterialTheme.spacing.small)
+            .defaultMinSize(168.dp, 91.dp)
+            .requiredSize(168.dp, 91.dp)
+            .padding(8.dp, 8.dp,)
             .fillMaxWidth(),
         elevation = CardDefaults.cardElevation(MaterialTheme.elevation.level1),
         shape = MaterialTheme.shape.extraLarge
@@ -341,13 +395,64 @@ fun MultiItemBox(
 ){
     Card(
         modifier = modifier
-            .defaultMinSize(200.dp, 76.dp)
-            .requiredSize(200.dp, 76.dp)
-            .padding(MaterialTheme.spacing.small)
+            .defaultMinSize(168.dp, 180.dp)
+            .requiredSize(168.dp, 180.dp)
+            .padding(8.dp, 8.dp, 8.dp, 8.dp)
             .fillMaxWidth(),
-        elevation = CardDefaults.cardElevation(MaterialTheme.elevation.level1),
+        elevation = CardDefaults.cardElevation(MaterialTheme.elevation.level0),
         shape = MaterialTheme.shape.extraLarge
     ) {
 
+    }
+}
+
+@Composable
+fun AlertsSecondBox(
+    modifier: Modifier
+) {
+    Card(
+        modifier = modifier
+            .defaultMinSize(168.dp, 180.dp)
+            .requiredSize(168.dp, 180.dp)
+            .padding(8.dp, 8.dp, 8.dp, 8.dp)
+            .fillMaxWidth(),
+        elevation = CardDefaults.cardElevation(MaterialTheme.elevation.level0),
+        shape = MaterialTheme.shape.extraLarge
+    ){
+        Row(
+            modifier = modifier
+                .padding(
+                    MaterialTheme.spacing.medium,
+                    MaterialTheme.spacing.small,
+                    MaterialTheme.spacing.default,
+                    MaterialTheme.spacing.small
+                )
+        ){
+            Text(
+                text = stringResource(R.string.yourtodaysoutput),
+                textAlign = TextAlign.Center
+                )
+        }
+    }
+}
+@Preview
+@Composable
+fun UiTesting(
+    modifier: Modifier = Modifier
+)
+{
+    Card(
+        modifier = modifier
+            .defaultMinSize(168.dp, 180.dp)
+            .requiredSize(168.dp, 180.dp)
+            .padding(8.dp, 8.dp, 8.dp, 8.dp)
+            .fillMaxWidth(),
+        elevation = CardDefaults.cardElevation(MaterialTheme.elevation.level0),
+        shape = MaterialTheme.shape.extraLarge
+    ){
+        Row(
+        ){
+            Text(text = stringResource(R.string.yourtodaysoutput))
+        }
     }
 }

@@ -23,6 +23,7 @@ import com.example.prakashalay.R
 import com.example.prakashalay.data.repository.DataRepository
 import com.example.prakashalay.navigation.Screen
 import com.example.prakashalay.ui.layout.buttons.UserIconButton
+import com.example.prakashalay.ui.theme.spacing
 
 @Composable
 fun SideNavigationDrawer(
@@ -42,8 +43,7 @@ fun SideNavigationDrawer(
             TopBox(navController = navController)
             MenuBox(navController = navController)
             BottomBox(
-                modifier = Modifier,
-                navController = navController
+                modifier = Modifier
             )
         }
     }
@@ -134,13 +134,13 @@ fun MenuBox(
 }
 @Composable
 fun BottomBox(
-    modifier: Modifier,
-    navController: NavController
+    modifier: Modifier
 ){
     val context = LocalContext.current
     Column(
         modifier = modifier
-            .padding(29.dp, 72.dp, 77.dp, 13.dp)
+//            .padding(29.dp, 72.dp, 77//.dp, 13.dp)
+            .padding(MaterialTheme.spacing.medium)
     ) {
         Text(text = stringResource(R.string.alsoon))
         LazyRow {
