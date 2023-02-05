@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object ServiceBuilder {
-    private const val URL = "https://prakashalay.loophole.site/api/"
+    private const val URL = "https://prakashalaya.loophole.site/api/"
     //Create a Custom Interceptor to apply Headers application wide
     private val logger = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
     private val headerInterceptor = Interceptor { chain ->

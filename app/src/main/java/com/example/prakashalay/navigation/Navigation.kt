@@ -15,6 +15,8 @@ import com.example.prakashalay.ui.screens.homescreen.HomeScreen
 import com.example.prakashalay.ui.screens.mapscreen.MapScreen
 import com.example.prakashalay.ui.screens.panelscreen.PanelScreen
 import com.example.prakashalay.ui.screens.profilescreen.ProfileScreen
+import com.example.prakashalay.ui.screens.roomscreen.RoomScreen
+import com.example.prakashalay.ui.screens.insightsscreen.InsightsScreen
 import com.example.prakashalay.ui.screens.settingscreen.SettingScreen
 import com.example.prakashalay.ui.screens.weatherscreen.WeatherScreen
 import com.google.accompanist.navigation.animation.AnimatedNavHost
@@ -65,6 +67,12 @@ fun Navigation() {
         }
         composable(route=Screen.ProfileScreen.route){
             ProfileScreen(navController = navController)
+        }
+        composable(route=Screen.RoomScreen.route){
+            RoomScreen(navController = navController)
+        }
+        composable(route=Screen.InsightsScreen.route){
+            InsightsScreen(navController = navController)
         }
     Log.i(nomenclature, "Successfully created $nomenclature rules.")
     }

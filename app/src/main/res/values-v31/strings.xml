@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="yourtodaysoutput">Your Today\'s Output</string>
+    <string name="notcharging">Not Charging</string>
+    <string name="solarpanelallcaps">SOLAR PANEL</string>
+    <string name="chargingtimeleft">Charging Time Left</string>
 </resources>

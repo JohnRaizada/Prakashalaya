@@ -92,7 +92,8 @@ fun AppTheme(
     CompositionLocalProvider(
         LocalSpacing provides Spacing(),
         LocalElevation provides Elevation(),
-        LocalShape provides Shape()
+        LocalShape provides Shape(),
+        LocalFontSize provides FontSize()
     ) {
         MaterialTheme(
             colorScheme = colors,

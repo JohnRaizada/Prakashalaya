@@ -10,11 +10,9 @@ import com.example.prakashalay.navigation.Screen
 
 object DataRepository {
     val navigationDrawerItems = listOf(
+        BottomNavigationDrawerItem.Insights,
         BottomNavigationDrawerItem.Home,
-        BottomNavigationDrawerItem.P,
-        BottomNavigationDrawerItem.A,
-        BottomNavigationDrawerItem.AA,
-        BottomNavigationDrawerItem.L,
+        BottomNavigationDrawerItem.Room
     )
     val sideNavigationDrawerMenuItems = listOf(
         MenuBoxItem(

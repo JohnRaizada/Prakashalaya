@@ -64,9 +64,9 @@ fun MenuIcon(
             modifier = Modifier
                 .requiredSize(37.dp)
                 .defaultMinSize(37.dp),
-            painter = painterResource(id = R.drawable.ic_launcher_background),
-            contentDescription = null,
-            contentScale = ContentScale.Crop
+            painter = painterResource(id = R.drawable.menu_icon),
+            contentDescription = stringResource(R.string.menu),
+            contentScale = ContentScale.FillBounds
         )
 //        val borderRadius = animateIntAsState(
 //            targetValue = if (isRound.value) 70 else 30,

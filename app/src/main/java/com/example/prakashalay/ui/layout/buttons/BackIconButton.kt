@@ -6,6 +6,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import com.example.prakashalay.R
 
@@ -18,6 +19,6 @@ fun BackIconButton(
         modifier = modifier,
         onClick = {navController.navigateUp()}
     ) {
-        Icon(painter = painterResource(id = R.drawable.ic_launcher_foreground), contentDescription = null)
+        Icon(painter = painterResource(R.drawable.back_arrow), contentDescription = stringResource(R.string.back))
     }
 }

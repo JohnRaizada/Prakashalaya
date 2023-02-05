@@ -128,7 +128,7 @@ private fun InsightsBox(
     }
 }
 @Composable
-fun LineChart() {
+private fun LineChart() {
     Column(
         modifier = Modifier
             .padding(16.dp)

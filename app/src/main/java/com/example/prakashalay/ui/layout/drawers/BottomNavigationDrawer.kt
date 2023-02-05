@@ -12,6 +12,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.prakashalay.R
 import com.example.prakashalay.data.repository.DataRepository
+import com.example.prakashalay.ui.theme.spacing
 
 
 @Composable
@@ -26,23 +27,33 @@ fun BottomNavigationDrawer(
             .width(410.dp)
             .fillMaxWidth()
             .wrapContentWidth(align = Alignment.CenterHorizontally)
-            .padding(10.dp, 0.dp, 10.dp, 10.dp),
+            .padding(10.dp, 0.dp, 10.dp, 10.dp)
+            .requiredHeight(60.dp),
         elevation = CardDefaults.cardElevation(10.dp)
     ) {
         Row(
             modifier = Modifier
                 .align(alignment = Alignment.CenterHorizontally)
                 .fillMaxWidth()
-                .wrapContentWidth()
+                .padding(
+                    MaterialTheme.spacing.default,
+                    MaterialTheme.spacing.oddSmall,
+                    MaterialTheme.spacing.default,
+                    MaterialTheme.spacing.default
+                ),
+            horizontalArrangement = Arrangement.SpaceAround,
+
         ) {
             DataRepository.navigationDrawerItems.forEach {
                 IconButton(
-                    modifier = Modifier.size(70.dp),
+                    modifier = Modifier
+                        .size(50.dp)
+                        .align(Alignment.CenterVertically),
                     onClick = {
                         navController.navigate(it.navRoute)
                     }) {
                     Icon(
-                        painter = painterResource(id = R.drawable.ic_launcher_foreground),
+                        painter = painterResource(id = it.icon),
                         tint = if (currentRoute == it.navRoute) {
                             MaterialTheme.colorScheme.primary
                         } else {
